@@ -1,8 +1,8 @@
 <template>
-  <header class="flex flex-row w-full bg-green-400 border-b-2 border-gray-400 items-center justify-between max-sm:flex-col">
+  <header class="flex flex-row w-full bg-gray-800 border-b-2 border-gray-600 items-center justify-between max-sm:flex-col">
     <div class="basis-1/4 flex items-center justify-start px-4 min-w-max">
       <img src="/assets/images/image1.png" alt="Logo" class="w-16 h-16 bg-transparent" />
-      <span class="ml-3 text-lg font-bold">MyProject</span>
+      <span class="ml-3 text-lg font-bold text-white">MyProject</span>
     </div>
 
     <div class="basis-1/4 max-sm:hidden"></div>
@@ -13,12 +13,13 @@
       <NuxtLink to="/" class="menu-item">Home</NuxtLink>
 
       <div class="relative">
-        <button @click="switch_submenu" class="menu-item">Labs</button>
-        <div v-show="submenu" class="absolute bg-white shadow-lg mt-2 rounded">
-          <NuxtLink to="/Lab3" class="submenu-item">Lab 3</NuxtLink>
-          <NuxtLink to="/Lab4" class="submenu-item">Lab 4</NuxtLink>
-          <NuxtLink to="/Lab5" class="submenu-item">Lab 5</NuxtLink>
-          <NuxtLink to="/Lab6" class="submenu-item">Lab 6</NuxtLink>
+        <div class="my-auto p-2 text-white hover:bg-gray-500 hover:text-white max-sm:w-full max-sm:text-center" @click="switch_submenu">Labs
+          <div class="flex flex-col absolute top-full bg-gray-700 text-white w-56 text-center max-sm:relative max-sm:w-full max-sm:bg-gray-500 max-sm:text-white" v-show="submenu">
+            <NuxtLink to="/lab3" class="submenu-item">Lab3</NuxtLink>
+            <NuxtLink to="/lab4" class="submenu-item">Lab4</NuxtLink>
+            <NuxtLink to="/lab5" class="submenu-item">Lab5</NuxtLink>
+            <NuxtLink to="/lab6" class="submenu-item">Lab6</NuxtLink>
+          </div>
         </div>
       </div>
 
@@ -26,7 +27,6 @@
       <NuxtLink to="/logout" class="menu-item">Logout</NuxtLink>
     </nav>
 
-    <!-- Burger Menu -->
     <div @click="switch_burger" class="max-sm:flex max-sm:flex-col max-sm:mr-8 max-sm:w-8 max-sm:h-6 cursor-pointer">
       <span class="burger-line" :class="{'rotate-45 relative top-[9px]': !burger}"></span>
       <span class="burger-line" :class="{'opacity-0': !burger}"></span>
@@ -34,11 +34,11 @@
     </div>
   </header>
 
-  <main class="p-5 flex bg-green-100 h-screen">
+  <main class="p-5 flex bg-gray-100 h-screen">
     <slot />
   </main>
 
-  <footer class="flex flex-row w-full bg-green-400 border-t-2 border-gray-400 items-center justify-center px-4 py-2 gap-4">
+  <footer class="flex flex-row w-full bg-gray-800 border-t-2 border-gray-600 items-center justify-center px-4 py-2 gap-4">
     <a href="https://www.youtube.com"><img src="/assets/images/logos-01-13.png" class="w-16 h-16" alt="YouTube"></a>
     <a href="https://instagram.com"><img src="/assets/images/logos-01-11.png" class="w-16 h-16" alt="Instagram"></a>
     <a href="https://www.facebook.com"><img src="/assets/images/logos-01-12.png" class="w-16 h-16" alt="Facebook"></a>
@@ -77,14 +77,15 @@ onMounted(() => {
 
 <style scoped>
 .menu-item {
-  @apply px-4 py-2 bg-red-500 font-medium rounded hover:bg-red-700 hover:text-white max-sm:w-full max-sm:border-b-2 max-sm:border-black max-sm:text-center;
+  @apply px-4 py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-800 max-sm:w-full max-sm:border-b-2 max-sm:border-black max-sm:text-center;
 }
 
 .submenu-item {
-  @apply block px-4 py-2 hover:bg-gray-200;
+  @apply my-auto p-2 border-b border-gray-600 hover:bg-gray-500 hover:text-white max-sm:w-full max-sm:text-center;
 }
 
 .burger-line {
-  @apply h-[3px] w-full bg-blue-950;
+  @apply h-[3px] w-full bg-white;
 }
 </style>
+
