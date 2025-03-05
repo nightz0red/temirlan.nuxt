@@ -7,8 +7,10 @@
 
     <div class="basis-1/4 max-sm:hidden"></div>
 
-    <nav :class="['basis-1/2 flex flex-row items-center justify-end px-8 gap-4', 
-        {'max-sm:flex max-sm:flex-col max-sm:absolute max-sm:top-full max-sm:w-full max-sm:bg-white': burger}]">
+    <nav :class="['basis-1/2 flex flex-row items-center justify-end px-8 gap-4 text-white bg-gray-900', 
+        {'max-sm:basis-auto max-sm:absolute max-sm:top-full max-sm:w-full max-sm:justify-center max-sm:flex-col max-sm:gap-0 max-sm:bg-gray-900 max-sm:px-0': burger},
+        {'max-sm:hidden': !burger}]">
+
       
       <NuxtLink to="/" class="menu-item">Home</NuxtLink>
 
@@ -26,12 +28,15 @@
       <NuxtLink to="/login" class="menu-item">LogIn</NuxtLink>
       <NuxtLink to="/logout" class="menu-item">Logout</NuxtLink>
     </nav>
-
-    <div @click="switch_burger" class="max-sm:flex max-sm:flex-col max-sm:mr-8 max-sm:w-8 max-sm:h-6 cursor-pointer">
-      <span class="burger-line" :class="{'rotate-45 relative top-[9px]': !burger}"></span>
-      <span class="burger-line" :class="{'opacity-0': !burger}"></span>
-      <span class="burger-line" :class="{'rotate-[-45deg] relative bottom-3': !burger}"></span>
+    <div @click="switch_burger" class="max-sm:flex max-sm:flex-col max-sm:mr-8 max-sm:w-8 max-sm:h-6 cursor-pointer text-red-300 outline outline-1 outline-white">
+     <span class="burger-line" :class="{'rotate-45 relative top-[9px]': !burger}"></span>
+     <span class="burger-line" :class="{'opacity-0': !burger}"></span>
+     <span class="burger-line" :class="{'rotate-[-45deg] relative bottom-3': !burger}"></span>
     </div>
+
+    
+
+
   </header>
 
   <main class="p-5 flex bg-gray-100 h-screen">
@@ -75,17 +80,4 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
-.menu-item {
-  @apply px-4 py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-800 max-sm:w-full max-sm:border-b-2 max-sm:border-black max-sm:text-center;
-}
-
-.submenu-item {
-  @apply my-auto p-2 border-b border-gray-600 hover:bg-gray-500 hover:text-white max-sm:w-full max-sm:text-center;
-}
-
-.burger-line {
-  @apply h-[3px] w-full bg-white;
-}
-</style>
 
