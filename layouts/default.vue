@@ -2,7 +2,7 @@
   <div class="flex flex-col min-h-screen">
   <header class="flex flex-row w-full bg-gray-800 border-b-2 border-gray-600 items-center justify-between max-sm:flex-col">
     <div class="basis-1/4 flex items-center justify-start px-4 min-w-max">
-      <img src="/assets/images/image1.png" alt="Logo" class="w-16 h-16 bg-transparent" />
+      <img src="/assets/images/logo.jpg" alt="Logo" class="w-16 h-16 bg-transparent" />
       <span class="ml-3 text-lg font-bold text-white">MyProject</span>
     </div>
 
