@@ -1,4 +1,5 @@
 <template>
+  <div class="flex flex-col min-h-screen">
   <header class="flex flex-row w-full bg-gray-800 border-b-2 border-gray-600 items-center justify-between max-sm:flex-col">
     <div class="basis-1/4 flex items-center justify-start px-4 min-w-max">
       <img src="/assets/images/image1.png" alt="Logo" class="w-16 h-16 bg-transparent" />
@@ -17,8 +18,7 @@
       <div class="relative">
         <div class="my-auto p-2 text-white hover:bg-gray-500 hover:text-white max-sm:w-full max-sm:text-center" @click="switch_submenu">Labs
           <div class="flex flex-col absolute top-full bg-gray-700 text-white w-56 text-center max-sm:relative max-sm:w-full max-sm:bg-gray-500 max-sm:text-white" v-show="submenu">
-            <NuxtLink to="/lab3" class="submenu-item">Lab3</NuxtLink>
-            <NuxtLink to="/lab4" class="submenu-item">Lab4</NuxtLink>
+            <NuxtLink to="/lab3" class="submenu-item">Lab3/4</NuxtLink>
             <NuxtLink to="/lab5" class="submenu-item">Lab5</NuxtLink>
             <NuxtLink to="/lab6" class="submenu-item">Lab6</NuxtLink>
           </div>
@@ -39,7 +39,7 @@
 
   </header>
 
-  <main class="p-5 flex bg-gray-100 h-screen">
+  <main class="p-5 flex-1 bg-gray-100 ">
     <slot />
   </main>
 
@@ -48,6 +48,7 @@
     <a href="https://instagram.com"><img src="/assets/images/logos-01-11.png" class="w-16 h-16" alt="Instagram"></a>
     <a href="https://www.facebook.com"><img src="/assets/images/logos-01-12.png" class="w-16 h-16" alt="Facebook"></a>
   </footer>
+  </div>
 </template>
 
 <script setup>
